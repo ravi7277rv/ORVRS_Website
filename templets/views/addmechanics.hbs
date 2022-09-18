@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {{>links}}
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/admindashboard">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admindashboard" style="font-weight:bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/totalusers" style="font-weight:bold;">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/totalmechanics" style="font-weight:bold;">Mechanic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/requests" style="font-weight:bold;">Request</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servicesprovided" style="font-weight:bold;">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            <button class="btn btn-secondary">Logout</button>
+                        </form>
+                    </li>
+            </div>
+        </nav>
+    </div>
+
+
+    {{!--============================== ADD MECHANIC HERE ==============================--}}
+
+    <div class="admin-add-mechanic">
+        <div class="admin-add-mechanic-overlay">
+            <div class="dismes">
+                {{#if message}}
+                <div style="text-align:center;" class="alert alert-secondary">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{message}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="admin-add-mechanic-1">
+                <div class="admin-addmechanic-form">
+                    <div class="admin-addmechanic-heading">
+                        <i> ADDING</i> &nbsp;<p><b><i>MECHANIC</i></b></p>&nbsp; <i>HERE</i>
+                    </div>
+                    <div class="formmechanic">
+                        <form action="/addmechanics" method="post">
+                            <div class="form-inline marg">
+                                <div class="form-group paddin">
+                                    <input type="text" class="form-control transparent" name="repairecenter_name"
+                                        placeholder="RepairCenter Name" required>
+                                </div>
+                                <div class="form-group paddin">
+                                    <input type="text" class="form-control transparent" name="mechanic_name"
+                                        placeholder="Mechanic Name" required>
+                                </div>
+                            </div>
+                            <div class="form-inline marg">
+                                <div class="form-group paddin">
+                                    <input type="email" class="form-control transparent" name="mechanic_email"
+                                        placeholder="Email-Id" required>
+                                </div>
+                                <div class="form-group paddin">
+                                    <input type="tel" class="form-control transparent" name="mechanic_phone"
+                                        placeholder="Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="form-inline marg">
+                                <div class="form-group paddin">
+                                    <input type="number" class="form-control transparent"
+                                        name="mechanic_year_experiences" placeholder="Exprerience Years" required>
+                                </div>
+                                <div class="form-group paddin">
+                                    <input type="number" class="form-control transparent"
+                                        name="mechanic_services_charge" placeholder="Service Charge" required>
+                                </div>
+                            </div>
+                            <div class="form-inline marg">
+                                <div class="form-group paddin">
+                                    <input type="text" class="form-control transparent" name="mechanic_address"
+                                        placeholder="Address" required>
+                                </div>
+                                <div class="form-group padd">
+                                    <select class="form-select" name="mechanic_speciality">
+                                        <option selected>Mechanic Speciality In</option>
+                                        <option value="Two Wheelers">Two Wheelers</option>
+                                        <option value="Three Wheelers">Three Wheelers</option>
+                                        <option value="Four Wheelers">Four Wheelers</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-inline marg">
+                                <div class="form-group paddin">
+                                    <input type="password" class="form-control transparent" name="password"
+                                        placeholder="Passwors" required>
+                                </div>
+                                <div class="form-group paddin">
+                                    <input type="password" class="form-control transparent" name="cpassword"
+                                        placeholder="Confirm Password" required>
+                                </div>
+                            </div>
+                            <div class="form-inline marg disflex">
+                                <input type="submit" value="Submit" class="inpbtn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {{!--============================== ADD MECHANIC HERE ==============================--}}
+
+
+
+    {{>footer}}
+
+</body>
+
+</html>

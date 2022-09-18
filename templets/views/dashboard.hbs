@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+  {{>links}}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">ORVRS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="#mechanicdetails">Mechanic</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#aboutservice">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#listservice">Services</a>
+      </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="font-weight:bold;">
+            Welcome {{data.user_name}}
+          </a>
+        </li> &nbsp;&nbsp;
+        <li class="nav-item">
+          <form action="/logout" method="post">
+            <button class="btn btn-secondary">Logout</button>
+          </form>
+        </li>
+    </div>
+  </nav>
+
+
+  {{!-------------------------------- USER DETAILS IN DASHBOARD ------------------------}}
+  <div class="backcolor">
+    <div class="card-overlay">
+      <div class="userdetails">
+        <h2 class="text-center userhead"><i>User Details</i></h2>
+        <table>
+          <tr>
+            <td>Name : {{data.user_name}}</td>
+          </tr>
+          <tr>
+            <td>Email-Id : {{data.user_email}}</td>
+          </tr>
+          <tr>
+            <td>Phone : {{data.user_phone}}</td>
+          </tr>
+          <tr>
+            <td>Address : {{data.address}}</td>
+          </tr>
+          <tr>
+            <td>Pincode : {{data.pincode}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="vehicledetails">
+        <h2 class="text-center vehiclehead"><i>Vehicle Details</i></h2>
+        <table>
+          <tr>
+            <td>Name : {{data.vehicle_name}}</td>
+          </tr>
+          <tr>
+            <td>Model : {{data.vehicle_model}}</td>
+          </tr>
+          <tr>
+            <td>Number : {{data.vehicle_number}}</td>
+          </tr>
+          <tr>
+            <td>Color : {{data.vehicle_color}}</td>
+          </tr>
+          <tr>
+            <td>Engine : {{data.vehicle_engine_cc}} cc</td>
+          </tr>
+          <tr>
+            <td>Fuel : {{data.vehicle_fuel}} Engine</td>
+          </tr>
+          <tr>
+            <td>Vehicle : {{data.vehicle_type}}</td>
+          </tr>
+          <tr>
+            <td>Reg.No. : {{data.vehicle_registration_no}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+
+  {{!-------------------------------- USER DETAILS IN DASHBOARD --------------------}}
+
+
+
+  {{!----------------------- MECHANIC DETAILS IN DASHBOARD -------------------------------}}
+  <div class="mechdashcontent" id="mechanicdetails">
+    <div class="mechhead"><i>Our Expert</i> &nbsp;<p><i>Mechanics</i></p>
+    </div>
+    <div class="mechanicdash">
+      {{#each mecdata}}
+      <div class="mechdashinside">
+        <div class="mechanicdash-img">
+          <img src="../../public//images/img_avatar.png" alt="">
+        </div>
+        <div class="mehcnaicdash-details">
+          <h2 class="text-center colour">{{mechanic_name}}</h2>
+          <p class="colour">Email-Id : {{mechanic_email}}</p>
+          <p class="colour">Phone No. : {{mechanic_phone}}</p>
+          <p class="colour">Year Of Expreience : {{mechanic_year_experiences}}</p>
+          <p class="colour">Expert of : {{mechanic_speciality}}</p>
+          <p class="colour">Charges : ₹ {{mechanic_services_charge}}</p>
+          <p class="colour">Address : {{mechanic_address}}</p>
+        </div>
+        <div class="mechdashaction">
+          <a href="dashboard/request/{{_id}}"> <button class="btn btn-primary act-btn">Request Service <i
+                class="fa fa-arrow-right" style="color:#f6f6f6;"></i> </button> </a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{!------------------------------- MECHANIC DETAILS IN DASHBOARD --------------------------}}
+
+
+
+
+  {{!------------------------------- some message to user ------------------------------------}}
+  <div class="usermessage" id="aboutservice">
+    <div class="usermessage1">
+      <div class="messageuser1">About Our <p>Services</p>
+      </div>
+      <div class="userdashmessage2">
+        <div class="usermessage2-1">
+          <p>We Provid one of the best Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quidem saepe
+            optio dolore atque dolores velit iste repellat cupiditate accusantium rem non minima laboriosam facere
+            doloribus fuga tenetur at sunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem ad animi atque
+            cumque quam sit dicta magni neque. Corrupti, omnis iure. Cupiditate architecto, debitis eum commodi beatae
+            delectus impedit facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores non eaque
+            totam! Tenetur corrupti quia vero, obcaecati, laboriosam at quaerat voluptatem repellendus esse facere
+            dolorum voluptates neque alias et. Repellat.</p>
+        </div>
+        <div class="usermessage2-2">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime officia at nemo in quis ex cumque? Tenetur
+            libero, alias neque excepturi earum, molestias sit animi voluptatibus debitis impedit aliquam cupiditate.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum incidunt nesciunt itaque cum labore eaque
+            sapiente modi distinctio unde quia, recusandae error expedita dolore. Ad dolore laboriosam voluptatibus aut
+            distinctio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident consequatur quam earum,
+            beatae distinctio cupiditate quae inventore nam corporis, aliquid sequi eaque tempora odit aut nulla dolore.
+            Debitis, nobis veritatis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!---------------------------- some message to user --------------------------------------}}
+
+
+
+
+
+  {{!---------------------------- TOTAL SERVICES DETAILS IN DASHBOARD ------------------------}}
+
+  <div class="totaluserservice" id="listservice">
+    <div class="totaluserservice1">Details of All <p>Services</p>
+    </div>
+    <div class="constainer totaluserservice2">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>MechanicName</th>
+            <th>M_Phone</th>
+            <th>M_Email</th>
+            <th>VehicleName</th>
+            <th>V_Number</th>
+            <th>Service</th>
+            <th>Total Charges</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each reqdata}}
+          <tr>
+            <td>{{mechanic_name}}</td>
+            <td>{{mechanic_phone}}</td>
+            <td>{{mechanic_email}}</td>
+            <td>{{vehicle_name}}</td>
+            <td>{{vehicle_number}}</td>
+            <td>{{problem}}</td>
+            <td>₹ {{mechanic_services_charge}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  {{!---------------------------- TOTAL SERVICES DETAILS IN DASHBOARD ------------------------}}
+
+
+
+  {{!-----==================----- SHOWING USER REQUEST FOR SERVICE -------===============-------}}
+
+  <div class="totalrequestedservice1" id="servicedetails">
+    <div class="totalrequestedservice-1">
+        <h3 class="text-center">Total Number of Services</h3>
+        <p class="text-white">12</p>
+    </div>
+    <div class="totalcompletedservice-2">
+        <h3 class="text-center">Total Requested Service</h3>
+        <p class="text-white">1</p>
+    </div>
+    <div class="totalnumberservices">
+       <h3 class="text-center">Total Completed Service</h3>
+       <p class="text-white">11</p>
+    </div>
+  </div>
+
+
+  {{!-----==================----- SHOWING USER REQUEST FOR SERVICE -------===============-------}}
+
+
+  {{>footer}}
+
+</body>
+
+</html>

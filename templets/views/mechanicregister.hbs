@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">ORVRS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="" style="font-size:15px;">Signup Here With Your Details</a>
+                        </li>
+                        {{!-- <li class="nav-item land_anchor">
+                            <a class="nav-link" href="/">Back</a>
+                        </li> --}}
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="displaymessage" style="background-color:#513252;">
+        {{#if message}}
+        <div style="text-align:center;" class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{message}}
+        </div>
+        {{/if}}
+    </div>
+    <div class="register-content" style="background-color:#513252;">
+        <div class="register-box" style="background-color:#ca4e79e0;">
+            <h3>Mechanic Registration</h3>
+            <img src="../../public/images/mechanics.png" alt="register.png">
+            <form action="/mechanicregister" method="post">
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="repairecenter_name" placeholder="RepairCenter Name"
+                            required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="mechanic_name" placeholder="Mechanic Name"
+                            required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="email" class="form-control" name="mechanic_email"  placeholder="Email-Id" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="tel" class="form-control" 
+                            name="mechanic_phone" placeholder="Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="number" class="form-control" name="mechanic_year_experiences"
+                            placeholder="Year Of Exprerience" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="number" class="form-control" name="mechanic_services_charge"
+                            placeholder="Services Charges" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="mechanic_address" placeholder="Address" required>
+                    </div>
+                    <div class="form-group padd">
+                        <select class="form-select"  name="mechanic_speciality">
+                            <option selected>Mechanic Speciality In</option>
+                            <option value="Two Wheelers">Two Wheelers</option>
+                            <option value="Three Wheelers">Three Wheelers</option>
+                            <option value="Four Wheelers">Four Wheelers</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="password" class="form-control" name="password" placeholder="Your Password"
+                            required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="password" class="form-control" name="cpassword" placeholder="Confirm Password"
+                            required>
+                    </div>
+                </div>
+                <input type="submit" class="btn-primary logbtn padd" style="background-color:#FFC18E;" value="Register">
+
+            </form>
+            <p>Already having Account <a href="/mechaniclogin">Login Here</a> </a></p>
+
+        </div>
+    </div>
+
+
+    {{>footer}}
+</body>
+
+</html>

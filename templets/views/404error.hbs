@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404Error Page</title>
+</head>
+<body>
+    
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" style="font-size:15px;">Page is Not Found</a>
+                    </li>
+            </div>
+        </nav>
+    </div>
+   
+         <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- left side div -->
+                    <div class="col-md-6 col-12 main_haeader_left align-item-center">
+                        <figure class="errorimg">
+                            <img src="../../public/images/error.jpg" alt="RaviTechnical" class="img-fluid" title="RaviTechnical">
+                        </figure>
+
+                         </div>
+
+                    <!-- right side div -->
+
+                    <div class="col-md-6 col-12 main_header_right">
+                   
+                        <p>On Road Vehicle Repaire System</p>
+                        <h1>{{errorMsg}}</h1>
+                        <a href="/" ><button>Back Home</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {{>links}}
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/admindashboard">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="/admindashboard" style="font-weight:bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/totalusers" style="font-weight:bold;">Users</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/totalmechanics" style="font-weight:bold;">Mechanic</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/requests" style="font-weight:bold;">Request</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/servicesprovided" style="font-weight:bold;">Services</a>
+                    </li>
+                    &nbsp;&nbsp;
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            <button class="btn btn-secondary">Logout</button>
+                        </form>
+                    </li>
+            </div>
+        </nav>
+    </div>
+    
+
+    {{!--============================ ADMIN DETAILS HERE ==============================--}}
+
+    <div class="admin-dashboard">
+        <div class="admin-dashboard-overlay">
+            <div class="admin-dashboard-1-1">
+                <p>Admin Dashboard</p>
+                <div class="smallbox0">
+                    <div class="smallbox">
+                        <div class="admin-smallbox-1">
+                            <p>Total Number Of Users</p>
+                            <p>{{toutalUser}}</p>
+                            <a href="/totalusers" class="admin-small-anchor">View <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="admin-smallbox-2">
+                            <p>Total Number Of Mechanic</p>
+                            <p>{{totalmechanic}}</p>
+                            <a href="/totalmechanics" class="admin-small-anchor">View <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="admin-smallbox-3">
+                            <p>Total Services Provided</p>
+                            <p>{{totalreqcomp}}</p>
+                            <a href="/servicesprovided" class="admin-small-anchor">View <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="admin-smallbox-4">
+                            <p>Total Pending Request</p>
+                            <p>{{totalreqpend}}</p>
+                            <a href="/requests" class="admin-small-anchor">View <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        {{!-- <div class="admin-smallbox-5">
+                            <p>Total Revenu</p>
+                            <p>₹ {{totalrevenu}}</p>
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!--============================ ADMIN DETAILS HERE ==============================--}}
+
+
+    {{>footer}}
+
+</body>
+
+</html>

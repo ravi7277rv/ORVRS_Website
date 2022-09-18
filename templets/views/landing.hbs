@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  {{>links}}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">ORVRS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item land_anchor">
+          <a class="nav-link " href="/login">User Login</a>
+        </li>
+        <li class="nav-item land_anchor">
+          <a class="nav-link" href="/adminlogin">Admin Login</a>
+        </li>
+        <li class="nav-item land_anchor">
+          <a class="nav-link" href="/mechaniclogin">Mechanic Login</a>
+        </li>
+    </div>
+  </nav>
+  <div class="opacity">
+    <div class="container-fluid main_header space">
+      <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+          <div class="row">
+            <!-- left side div -->
+            <div class="col-md-6 col-12 main_header_left">
+              <p>Welcome to Vehicle Repaire</p>
+              <h1>Get Your Vehicle <span class="txt_clr">Repair</span> at Your Place</h1>
+              <a href="/vehicleregister"><button>Vehicle Registration</button></a>
+              <a href="/mechanicregister"><button>Mechanic Registration</button></a>
+            </div>
+            <!-- right side div -->
+            <div class="col-md-6 col-12 main_haeader_right">
+
+              <div id="carouselExampleControls" class="carousel slide cornershort" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class=" w-100" src="../../public/images/bg1.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class=" w-100" src="../../public/images/bg2.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class=" w-100" src="../../public/images/bg3.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class=" w-100" src="../../public/images/bg4.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class=" w-100" src="../../public/images/bg5.jpg" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {{!-- OUR MECHANIC --}}
+ {{!----------------------- MECHANIC DETAILS IN DASHBOARD -------------------------------}}
+  <div class="mechdashcontent">
+    <div class="mechhead"><i>Our Expert</i> &nbsp;<p><i>Mechanics</i></p>
+    </div>
+    <div class="mechanicdash">
+      {{#each mdata}}
+      <div class="mechdashinside">
+        <div class="mechanicdash-img">
+          <img src="../../public//images/img_avatar.png" alt="">
+        </div>
+        <div class="mehcnaicdash-details">
+          <h2 class="text-center colour">{{mechanic_name}}</h2>
+          <p class="colour">Email-Id : {{mechanic_email}}</p>
+          <p class="colour">Phone No. : {{mechanic_phone}}</p>
+          <p class="colour">Year Of Expreience : {{mechanic_year_experiences}}</p>
+          <p class="colour">Expert of : {{mechanic_speciality}}</p>
+          <p class="colour">Charges : ₹ {{mechanic_services_charge}}</p>
+          <p class="colour">Address : {{mechanic_address}}</p>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{!------------------------------- MECHANIC DETAILS IN DASHBOARD --------------------------}}
+  <div class="servicecontent">
+    <div class="heading">
+      <div class="ourserve"><i>Our Most</i></div>
+      <div class="ourservice"><i> Popular Services</i></div>
+    </div>
+    <div class="service">
+      <div class="servicebox1">
+        <img src="../../public//images/s1.png" alt="Tyre Service">
+        <p class="headpink">Battery Service</p>
+      </div>
+      <div class="servicebox2">
+        <img src="../../public/images/s2.png" alt="Tyre servie">
+        <p class="headpink">Tyre Service</p>
+      </div>
+      <div class="servicebox3">
+        <img src="../../public/images/s3.png" alt="Car altenator">
+        <p class="headpink">Car Alternator</p>
+      </div>
+    </div>
+    <div class="service">
+      <div class="servicebox4">
+        <img src="../../public/images/s4.png" alt="Car Joints">
+        <p class="headpink">Car Ball & Joints</p>
+      </div>
+      <div class="servicebox5">
+        <img src="../../public//images/s5.png" alt="Lubricant service">
+        <p class="headpink">Lubricant Service</p>
+      </div>
+      <div class="servicebox6">
+        <img src="../../public//images/s6.png" alt="Normal service">
+        <p class="headpink">Normal Service</p>
+      </div>
+    </div>
+  </div>
+  {{!-- OUR SERIVECS END HERE --}}
+
+
+  {{!-- WE HAVE THE PRODUCT START HERE --}}
+  <div class="productcontent">
+    <div class="heading">
+      <div class="ourpro"><i>We Have</i></div>
+      <div class="ourproduct"><i>Our Products</i></div>
+    </div>
+    <div class="product">
+      <div class="productbox1">
+        <img src="../../public/images/p1.png" alt="Tyres">
+        <p class="headgreen">Oil & Tyres</p>
+      </div>
+      <div class="productbox2">
+        <img src="../../public/images/p2.png" alt="Tyres">
+        <p class="headgreen">Car AirFilter</p>
+      </div>
+      <div class="productbox3">
+        <img src="../../public/images/p3.png" alt="Tyres">
+        <p class="headgreen">Car Alternator</p>
+      </div>
+    </div>
+    <div class="product">
+      <div class="productbox4">
+        <img src="../../public/images/p4.png" alt="Tyres">
+        <p class="headgreen">Car Battery</p>
+      </div>
+      <div class="productbox5">
+        <img src="../../public/images/p5.png" alt="Tyres">
+        <p class="headgreen">Car Boll Joints</p>
+      </div>
+      <div class="productbox6">
+        <img src="../../public/images/p6.png" alt="Tyres">
+        <p class="headgreen">Car Headlights</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  {{!-- WE HAVE THE PRODUCT END HERE --}}
+
+  {{!-- SERVICES PACKAGES START HERE --}}
+  <div class="servicepackagecontent">
+    <div class="heading">
+      <div class="ourpack"><i>Maintanence</i></div>
+      <div class="ourpackages"><i>Service Packages</i></div>
+    </div>
+    <div class="packages">
+      <div class="packagebox1">
+        <p class="freeserv orgcolor">FREE SERVICES</p>
+        <div class="packagebox1-1">
+          <div class="pack1-1-1">
+          <table>
+            <tr>
+              <td><b>Wiper Blade</b> Installation</td>
+            </tr>
+            <tr>
+              <td><b>Check Engine</b> Lignt Code Retrieval</td>
+            </tr>
+            <tr>
+              <td><b>Air Filter</b> Replacement</td>
+            </tr>
+            <tr>
+              <td><b>Starting and Charging</b> System Evolution</td>
+            </tr>
+          </table>
+          </div>
+          <div class="pack1-1-2">
+            <table>
+              <tr>
+                <td>Free</td>
+              </tr>
+              <tr>
+                <td>Free</td>
+              </tr>
+              <tr>
+                <td>Free</td>
+              </tr>
+              <tr>
+                <td>Free</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="packagebox2">
+        <p class="packheadgreen grncolor">TUNE-UP</p>
+        <div class="packagebox2-1">
+          <div class="pack2-1-1">
+          <table>
+            <tr>
+              <td><b>Spring Maintanence</b> Package</td>
+            </tr>
+            <tr>
+              <td><b>Summer Maintanence</b> Package</td>
+            </tr>
+            <tr>
+              <td><b>Winter Maintanence</b> Package</td>
+            </tr>
+            <tr>
+              <td><b>Smoke Test Diagnostic</b> Service</td>
+            </tr>
+          </table>
+          </div>
+          <div class="pack2-1-2">
+            <table>
+              <tr>
+                <td>From ₹ 1859</td>
+              </tr>
+              <tr>
+                <td>From ₹ 1599</td>
+              </tr>
+              <tr>
+                <td>From ₹ 1769</td>
+              </tr>
+              <tr>
+                <td>From ₹ 650</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="packages">
+      <div class="packagebox3">
+        <p class="packheadgreen orgcolor">MAINTENANCE SERVICES</p>
+        <div class="packagebox3-1">
+          <div class="pack3-1-1">
+          <table>
+            <tr>
+              <td><b>Head Light </b>Package</td>
+            </tr>
+            <tr>
+              <td><b>Small Bulb Installation </b>Package</td>
+            </tr>
+            <tr>
+              <td><b>Cabin Air Filter Install </b>Package</td>
+            </tr>
+            <tr>
+              <td><b>Spring Maintanence </b>Package</td>
+            </tr>
+          </table>
+          </div>
+          <div class="pack3-1-2">
+            <table>
+              <tr>
+                <td>From ₹ 2599</td>
+              </tr>
+              <tr>
+                <td>From ₹ 780</td>
+              </tr>
+              <tr>
+                <td>From ₹ 899</td>
+              </tr>
+              <tr>
+                <td>From ₹ 8999</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="packagebox4">
+        <p class="packheadgreen grncolor">FLUID SERVICES</p>
+        <div class="packagebox4-1">
+          <div class="pack4-1-1">
+          <table>
+            <tr>
+              <td><b>Engine Flush</b> Service</td>
+            </tr>
+            <tr>
+              <td><b>Transmission Fluid</b> Service</td>
+            </tr>
+            <tr>
+              <td><b>Break Fluid</b> Exchange</td>
+            </tr>
+            <tr>
+              <td><b>Coolant Drain & Fill </b>Package</td>
+            </tr>
+          </table>
+          </div>
+          <div class="pack4-1-2">
+            <table>
+              <tr>
+                <td>From ₹ 1550</td>
+              </tr>
+              <tr>
+                <td>From ₹ 1199</td>
+              </tr>
+              <tr>
+                <td>From ₹ 425</td>
+              </tr>
+              <tr>
+                <td>From ₹ 750</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{!-- SERVICES PACKAGES END HERE --}}
+
+  {{>footer}}
+
+</body>
+
+</html>

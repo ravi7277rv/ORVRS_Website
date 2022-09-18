@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">ORVRS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="" style="font-size:15px;">Signup Here With Your Details</a>
+                        </li>
+                         {{!-- <li class="nav-item land_anchor">
+                            <a class="nav-link" href="/">Back</a>
+                        </li> --}}
+                </div>
+            </nav>
+        </div>
+    </div>
+      <div class="displaymessage" style="background-color:#85586F;">
+        {{#if message}}
+            <div style="text-align:center;" class="alert alert-secondary">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{message}}
+            </div>
+            {{/if}}
+    </div>
+    <div class="register-content" style="background-color:#85586F;">
+        <div class="register-box" style="background-color:#DEB6AB;">
+            <h3>Vehicle Registration</h3>
+            <img src="../../public/images/vehicle.png" alt="register.png">
+            <form action="/vehicleregister" method="post">
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="user_name" placeholder="User Name" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="email" class="form-control" name="user_email" placeholder="User Email-Id" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="user_phone" placeholder="User Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_name" placeholder="Vechile Name" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_model" placeholder="Vechicle Model" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_type" placeholder="Vechicle Type" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_number" placeholder="Vehicle Number" required>
+                    </div>
+                   <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_color" placeholder="Vehcile Color" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="number" class="form-control" name="vehicle_engine_cc" placeholder="Engine CC" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_registration_no" placeholder="Vehcile Registration No" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_fuel" placeholder="Fuel Type" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="address" placeholder="Address" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="pincode" placeholder="Pin-Code" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="password" class="form-control" name="cpassword" placeholder="Confirm Password" required>
+                    </div>
+                </div> 
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="submit" class="logbtn padd"  style="background-color:#BE8C63;"value="Register Vehicle">
+                    </div>
+                    <div class="form-group padd">
+                        <p>Already having Account <a href="/login">Login Here</a> </a></p>
+                    </div>
+                </div>
+                <br>
+                
+
+            </form>
+             
+            
+        </div>
+    </div>
+
+
+    {{>footer}}
+</body>
+
+</html>

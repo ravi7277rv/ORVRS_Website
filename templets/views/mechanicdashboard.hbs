@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Dashboard</title>
+    {{>links}}
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="/mechanicdashboard" style="font-weight:bold;">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#request" style="font-weight:bold;">Request</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#completed" style="font-weight:bold;">Serivces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" style="font-weight:bold;">
+
+                            Welcome {{data.mechanic_name}}
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            <button class="btn btn-secondary">Logout</button>
+                        </form>
+                    </li>
+            </div>
+        </nav>
+    </div>
+    <div class="mechcontent">
+        <div class="mechbox">
+            <div class="mechanic-overlay">
+                <div class="mechbox1">
+                    <h2 class="text-center">Mechanic Details</h2>
+                    <label>Repaire Center name : {{data.repairecenter_name}}</label>
+                    <label>Mechanic Name : {{data.mechanic_name}}</label>
+                    <label>Mechanic Email : {{data.mechanic_email}}</label>
+                    <label>Mechanic Phone : {{data.mechanic_phone}}</label>
+                    <label>Year of Experiences : {{data.mechanic_year_experiences}}</label>
+                    <label>Services charges : {{data.mechanic_services_charge}}</label>
+                    <label>Specialty : {{data.mechanic_speciality}}</label>
+                    <label>Address : {{data.mechanic_address}}</label>
+                </div>
+                <div class="mechbox2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!--====================== MECHANIC TOTAL LIST OF SERVICING =========================--}}
+
+    <div class="mechanic-list-servicing" id="request">
+        <div class="mechanic-list-servicing-1">
+            <div class="mechanic-list-overlay">
+                <h4 class="text-center text-white m-3 h4mechead"><i>Number of<span class="mechspanhead"> Pending </i></span>Services</h4>
+                <div class="mechanic-list-servicing-2">
+                    <table class="table-bordered text-center">
+                        <tr>
+                            <th>UserName</th>
+                            <th>UserPhone</th>
+                            <th>VehicleName</th>
+                            <th>VehicleNumber</th>
+                            <th>VehicleReg.No.</th>
+                            <th>Location</th>
+                            <th>Problem</th>
+                            <th>Charges</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        {{#each reqpend}}
+                        <tr>
+                            <td>{{user_name}}</td>
+                            <td>{{user_phone}}</td>
+                            <td>{{vehicle_name}}</td>
+                            <td>{{vehicle_number}}</td>
+                            <td>{{vehicle_registration_no}}</td>
+                            <td>{{location}}</td>
+                            <td>{{problem}}</td>
+                            <td>{{mechanic_services_charge}}</td>
+                            <td>{{status}}</td>
+                            <td>
+                                <a href="/mechanicdashboard/updaterequest/{{_id}}"><button  class="btn btn-primary compbtn">Completed</button></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+                {{!-- <h4 class="text-center text-white ">Number of Completed Services</h4>
+                <div class="mechanic-list-servicing-3">
+                    <table class="table-bordered text-center">
+                        <tr>
+                            <th>UserName</th>
+                            <th>UserPhone</th>
+                            <th>VehicleName</th>
+                            <th>VehicleNumber</th>
+                            <th>VehicleReg.No.</th>
+                            <th>Location</th>
+                            <th>Problem</th>
+                            <th>Charges</th>
+                            <th>Status</th>
+                        </tr>
+                        {{#each reqcomp}}
+                        <tr>
+                            <td>{{user_name}}</td>
+                            <td>{{user_phone}}</td>
+                            <td>{{vehicle_name}}</td>
+                            <td>{{vehicle_number}}</td>
+                            <td>{{vehicle_registration_no}}</td>
+                            <td>{{location}}</td>
+                            <td>{{problem}}</td>
+                            <td>{{mechanic_services_charge}}</td>
+                            <td>{{status}}</td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
+    {{!--====================== MECHANIC TOTAL LIST OF SERVICING =========================--}}
+
+
+    {{!--====================== MECHANIC REQUEST FOR SERVICING ==========================--}}
+
+    <div class="mechanic-request-service" id="completed">
+        <div class="mechanic-request-service-1">
+            <div class="mechanic-request-overlay">
+                <div class="hadingservice"><i>List of Services <p>Provided</i></p>
+                </div>
+                <div class="mechanic-request-service-1-1">
+                    <div class="serReqheading">
+                        <table class="table-bordered text-center">
+                            <tr>
+                                <th>UserName</th>
+                                <th>UserPhone</th>
+                                <th>VehicleName</th>
+                                <th>VehicleNumber</th>
+                                <th>VehicleReg.No.</th>
+                                <th>Location</th>
+                                <th>Problem</th>
+                                <th>Charges</th>
+                                <th>Status</th>
+                            </tr>
+                            {{#each reqcomp}}
+                            <tr>
+                                <td>{{user_name}}</td>
+                                <td>{{user_phone}}</td>
+                                <td>{{vehicle_name}}</td>
+                                <td>{{vehicle_number}}</td>
+                                <td>{{vehicle_registration_no}}</td>
+                                <td>{{location}}</td>
+                                <td>{{problem}}</td>
+                                <td>{{mechanic_services_charge}}</td>
+                                <td>{{status}}</td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {{!--====================== MECHANIC REQUEST FOR SERVICING ==========================--}}
+
+
+    {{>footer}}
+
+</body>
+
+</html>

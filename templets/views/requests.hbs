@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {{>links}}
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/admindashboard">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admindashboard" style="font-weight:bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/totalusers" style="font-weight:bold;">Users</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/totalmechanics" style="font-weight:bold;">Mechanic</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/requests" style="font-weight:bold;">Request</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/servicesprovided" style="font-weight:bold;">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            <button class="btn btn-secondary">Logout</button>
+                        </form>
+                    </li>
+            </div>
+        </nav>
+    </div>
+
+
+ {{!--============================== REQUEST FOR THE MECHANIC ====================--}}
+
+    <div class="pending-request" id="requestpending">
+        <div class="pending-request-overlay">
+            <div class="pending-heading">
+               <i> Request For</i> <p><i> Service </i></p>
+            </div>
+            <div class="pending-request-1">
+                <div class="pending-request-1-2">
+                     <table class="table-bordered text-center">
+                        <tr>
+                            <th>User</th>
+                            <th>Phone</th>
+                            <th>Vehicle</th>
+                            <th>Number</th>
+                            <th>Reg.No</th>
+                            <th>Mechanic</th>
+                            <th>Phone</th>
+                            <th>Location</th>
+                            <th>Problem</th>
+                            <th>Charges</th>
+                            <td>Status</td>
+                        </tr>
+                        {{#each reqpend}}
+                        <tr>
+                            <td>{{user_name}}</td>
+                            <td>{{user_phone}}</td>
+                            <td>{{vehicle_name}}</td>
+                            <td>{{vehicle_number}}</td>
+                            <td>{{vehicle_registration_no}}</td>
+                            <td>{{mechanic_name}}</td>
+                            <td>{{mechanic_phone}}</td>
+                            <td>{{location}}</td>
+                            <td>{{problem}}</td>
+                            <td>{{mechanic_services_charge}}</td>
+                            <td>{{status}}</td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{!--============================== REQUEST FOR THE MECHANIC ====================--}}
+
+
+
+
+
+
+    {{>footer}}
+
+</body>
+
+</html>

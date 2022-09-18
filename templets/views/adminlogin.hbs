@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <title>Admin Login</title>
+</head>
+
+<body class="boody">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" style="font-size:15px;">Login Here With Your Credential</a>
+                    </li>
+                    {{!-- <li class="nav-item land_anchor">
+                            <a class="nav-link" href="/">Back</a>
+                        </li> --}}
+            </div>
+        </nav>
+    </div>
+     <div class="displaymessage" style="background-color:#76BA99;">
+        {{#if message}}
+            <div style="text-align:center;" class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{message}}
+            </div>
+            {{/if}}
+    </div>
+    {{!-- Login form start here --}}
+    <div class="login-content" style="background-color:#76BA99;">
+
+        <div class="login-box" style="background-color:#ADCF9F;">
+            <h3>Login Your self</h3>
+            <img src="../../public/images/login.png" alt="login.png">
+
+            <form action="/adminlogin" method="post">
+
+                <div class="col-md">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="col-md">
+                    <input type="submit" value="Login" class="logbtn" style="background-color:#9EB23B;">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

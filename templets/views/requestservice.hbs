@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Service Page</title>
+    {{>links}}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ORVRS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="font-weight:bold;">
+                        Welcome {{data.user_name}}
+                    </a>
+                </li> &nbsp;&nbsp;
+                <li class="nav-item">
+                    <form action="/logout" method="post">
+                        <button class="btn btn-secondary">Logout</button>
+                    </form>
+                </li>
+        </div>
+    </nav>
+
+
+
+    {{!================= SERVICE FORM START FROM HERE ========================================}}
+    <div class="servicediv">
+        <div class="serviceformdiv">
+            <div class="service-formdiv-head"><i>Request For <p>Service</i> &nbsp;<i class="fa fa-arrow-right"
+                    style="color:#f6f6f6;"></i></p>
+            </div>
+            <hr class="new1">
+            <form action="/requestservice" method="post">
+
+                <div class="service-formdiv-userdetails">
+                    <div class="userdetail-heading">
+                        <h4>UserDetails</h4>
+                    </div>
+                    <div class="service-form-divcolumn">
+                        <div class="service-formdiv-userdetails-1">
+                            <label class="inset" name="user_name"><b>Name : </b>{{data.user_name}}</label>
+                            <label class="inset" name="user_email"><b>Email-Id : </b>{{data.user_email}}</label>
+                            <label class="inset" name="user_phone"><b>Phone : </b>{{data.user_phone}}</label>
+                        </div>
+                        <div class="service-formdiv-userdetails-2">
+                            <label class="inset" name="vehicle_name"><b>Vehicle Name : </b>{{data.vehicle_name}}</label>
+                            <label class="inset" name="vehicle_number"><b>Vehicle Number :
+                                </b>{{data.vehicle_number}}</label>
+                            <label class="inset" name="vehicle_registration_no"><b>Vehicle Reg. No. :
+                                </b>{{data.vehicle_registration_no}}</label>
+                            </di>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="new1">
+                <div class="service-formdiv-mechdetails">
+                    <div class="mechanic-heading">
+                        <h4>MechanicDetails</h4>
+                    </div>
+                    <div class="service-form-mechanicdetails-1">
+                        <div class="service-from-mechanicdetails-1-1">
+                            <label class="inset" name="mechanic_name"><b>Name : </b>{{mecdata.mechanic_name}}</label>
+                            <label class="inset" name="mechanic_email"><b>Email-Id :
+                                </b>{{mecdata.mechanic_email}}</label>
+                            <label class="inset" name="mechanic_phone"><b>Phone : </b>{{mecdata.mechanic_phone}}</label>
+                            <label class="inset" name="mechanic_phone"><b>Repair CenterName : </b>{{mecdata.repairecenter_name}}</label>
+                        </div>
+                        <div class="service-from-mechanicdetails-1-2">
+
+                            <label class="inset" name="mechanic_charge"><b>Service Charge : ₹
+                                </b>{{mecdata.mechanic_services_charge}}</label>
+                            <label class="inset" name="mechanic_spec"><b>Mechanic Of :
+                                </b>{{mecdata.mechanic_speciality}}</label>
+                            <label class="inset" name="mechanic_exp"><b>Experience :
+                                </b>{{mecdata.mechanic_year_experiences}}
+                                Years</label>
+                                <label class="inset" name="mechanic_exp"><b>Address :
+                                </b>{{mecdata.mechanic_address}}
+                                Years</label>
+                        </div>
+                    </div>
+
+                </div>
+                <hr class="new1">
+                <div class="service-formdiv-problem">
+                    <div class="problem-heading">
+                        <h4>Vehicle Issue</h4>
+                    </div>
+                    <div class="form-inline padd">
+                        <div class="form-group padd">
+                            <input type="text" name="location" placeholder="Enter Your Location">
+                        </div>
+                        <div class="form-group padd">
+                            <input type="text" class="longinputissue" name="problem" placeholder="Enter Your Query Releted Vehicle">
+                            <input type="text" name="status" value="pending" hidden>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-formdiv-button">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

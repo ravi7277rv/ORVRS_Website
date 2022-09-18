@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {{>links}}
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/admindashboard">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="/admindashboard" style="font-weight:bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/totalusers" style="font-weight:bold;">Users</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/totalmechanics" style="font-weight:bold;">Mechanic</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/requests" style="font-weight:bold;">Request</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/servicesprovided" style="font-weight:bold;">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            <button class="btn btn-secondary">Logout</button>
+                        </form>
+                    </li>
+            </div>
+        </nav>
+    </div>
+
+
+
+      {{!--============================== USER DETAILS HERE ==============================--}}
+    <div class="admin-user-details" id="totaluser">
+        <div class="admin-useer-details-overlay">
+            <p><b><i>List Of User <span class="spanuser">Details</b></i> </span></p>
+            <div class="admin-user-details-1">
+                <div class="admin-user-details-1-2">
+                    <table class="table-bordered text-center">
+                        <tr>
+                            <th>User_Name</th>
+                            <th>User_Phone</th>
+                            <th>User_Email</th>
+                            <th>Vehicle_Name</th>
+                            <th>Vehicle_Number</th>
+                            <th>Vehicle_Reg.No.</th>
+                            <th>Vehicle_model</th>
+                            <th>Vehicle_engine_cc</th>
+                            <th>Pincode</th>
+                            <th>Address</th>
+                        </tr>
+                        {{#each userdata}}
+                        <tr>
+                            <td>{{user_name}}</td>
+                            <td>{{user_phone}}</td>
+                            <td>{{user_email}}</td>
+                            <td>{{vehicle_name}}</td>
+                            <td>{{vehicle_number}}</td>
+                            <td>{{vehicle_registration_no}}</td>
+                            <td>{{vehicle_model}}</td>
+                            <td>{{vehicle_engine_cc}}</td>
+                            <td>{{pincode}}</td>
+                            <td>{{address}}</td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{!--============================== USER DETAILS HERE ==============================--}}
+
+
+
+
+
+
+
+    {{>footer}}
+
+</body>
+
+</html>

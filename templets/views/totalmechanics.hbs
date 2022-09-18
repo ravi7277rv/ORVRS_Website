@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {{>links}}
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/admindashboard">ORVRS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admindashboard" style="font-weight:bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/totalusers" style="font-weight:bold;">Users</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/totalmechanics" style="font-weight:bold;">Mechanic</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/requests" style="font-weight:bold;">Request</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/servicesprovided" style="font-weight:bold;">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            <button class="btn btn-secondary">Logout</button>
+                        </form>
+                    </li>
+            </div>
+        </nav>
+    </div>
+
+
+ {{!--============================== MECHANIC DETAILS HERE ==============================--}}
+
+
+    <div class="admin-mechanic-details" id="mechanicdetails">
+        <div class="admin-mechanic-detils-overlay">
+            <div class="admin-mechanic-heading">
+                <i>List of</i>&nbsp;<p><i>Mechanic</i></p><i>&nbsp; Details </i>
+            </div>
+            <div class="addmechanic-button">
+                <a href="/addmechanics"><button class="inpbtn">Add Mechanic</button></a>
+            </div>
+            <div class="admin-mechanic-details-1">
+                <div class="admin-mechanic-table">
+                    <table class="table-bordered text-center">
+                        <tr>
+                            <th>Mechanic_Name</th>
+                            <th>Mechanic_Phone</th>
+                            <th>Mechanic_Email</th>
+                            <th>Experience_Year</th>
+                            <th>Service_Charges</th>
+                            <th>Speciality</th>
+                            <th>RepaireCenter Name</th>
+                            <th>Address</th>
+                            <th>Action</th>
+
+                        </tr>
+                        {{#each mecdata}}
+                        <tr>
+                            <td>{{mechanic_name}}</td>
+                            <td>{{mechanic_phone}}</td>
+                            <td>{{mechanic_email}}</td>
+                            <td>{{mechanic_year_experiences}}</td>
+                            <td>{{mechanic_services_charge}}</td>
+                            <td>{{mechanic_speciality}}</td>
+                            <td>{{repairecenter_name}}</td>
+                            <td>{{mechanic_address}}</td>
+                            <td>
+<a class="btn btn-danger btn-xs" href="/admindashboard/delete/{{_id}}"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{!--============================== MECHANIC DETAILS HERE ==============================--}}
+
+
+
+
+
+
+
+
+    {{>footer}}
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">ORVRS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="" style="font-size:15px;">Signup Here With Your Details</a>
+                        </li>
+                         <li class="nav-item land_anchor">
+                            <a class="nav-link" href="/">Back</a>
+                        </li>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="displaymessage" style="background-color:#76BA99;">
+        {{#if message}}
+            <div style="text-align:center;" class="alert alert-secondary">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{message}}
+            </div>
+            {{/if}}
+    </div>
+    <div class="register-content" style="background-color:#76BA99;">
+        <div class="register-box" style="background-color:#82a076;">
+            <h3>User Registration</h3>
+            <img src="../../public/images/client.png" alt="register.png">
+            <form action="/register" method="post">
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="firstname" placeholder="Firstname" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="lastname" placeholder="Lastname" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="email" class="form-control" name="email" placeholder="Email-Id" required>
+                    </div>
+                    <div class=" form-check form-inline padd">
+                        <input type="radio" class="form-control" name="gender" value="male" required>Male &nbsp;&nbsp;
+                        <input type="radio" class="form-control" name="gender" value="female">Female
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="phone" placeholder="Your Phone No." required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="vehicle_number" placeholder="Your Vehicle Number" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="text" class="form-control" name="address" placeholder="Address" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="number" class="form-control" name="pincode" placeholder="Pin-code" required>
+                    </div>
+                </div>
+                <div class="form-inline padd">
+                    <div class="form-group padd">
+                        <input type="password" class="form-control" name="password" placeholder="Your Password" required>
+                    </div>
+                    <div class="form-group padd">
+                        <input type="password" class="form-control" name="cpassword" placeholder="Confirm Password" required>
+                    </div>
+                </div> 
+                <input type="submit" class="btn-primary logbtn padd" value="Register" style="background-color:#CED89E;">
+
+            </form>
+            
+            <p>Already having Account <a href="/login">Login Here</a> </a></p>
+        </div>
+    </div>
+
+
+    {{>footer}}
+</body>
+
+</html>
